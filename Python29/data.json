@@ -1,0 +1,14 @@
+{
+    "Amazon": {
+        "email": "devon@beepboop.us",
+        "password": "Let's go"
+    },
+    "There we go": {
+        "email": "devon@beepboop.us",
+        "password": "Test"
+    },
+    "Test": {
+        "email": "devon@beepboop.us",
+        "password": "pass"
+    }
+}
