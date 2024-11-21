@@ -6,7 +6,7 @@ API_KEY = os.environ.get("WEATHER_API_KEY")
 ENDPOINT = "https://api.openweathermap.org/data/2.5/forecast"
 
 
-account_sid = "ACfff638e4cc39b532e1dd8048283c70bb"
+account_sid = os.environ.get("ACCOUNT_SID")
 auth_token = os.environ.get("TWILIO_AUTH_TOKEN")
 
 weather_params = {
