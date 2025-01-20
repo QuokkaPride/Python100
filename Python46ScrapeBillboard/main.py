@@ -1,18 +1,21 @@
 from bs4 import BeautifulSoup
 import requests
-
-from dotenv import load_dotenv
 import os
 
+# Import the Spotify client and function from spotify.py
+from spotify import sp, create_playlist_and_add_songs
+
+from dotenv import load_dotenv
+
+
+
 spotify_client_id = os.getenv("SPOTIFY_CLIENT_ID")
-
-
 
 headers = {
     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.3"
 }
 
-music_date = input("what date would you like to travel to sonicly? (format: YYYY-MM-DD): ")
+music_date = input("What date would you like to travel to sonically? (format: YYYY-MM-DD): ")
 billboard_url = f"https://www.billboard.com/charts/hot-100/{music_date}"
 response = requests.get(billboard_url, headers=headers)
 
@@ -40,3 +43,7 @@ for container in song_containers:
 
 for song in songs:
     print(f"{song['rank']}: {song['title']} by {song['singer']}")
+
+# Use the Spotify client from spotify.py
+user_id = sp.me()["id"]  # Get the current user's Spotify ID
+create_playlist_and_add_songs(songs, user_id, music_date)
