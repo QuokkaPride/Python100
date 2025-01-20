@@ -1,6 +1,13 @@
 from bs4 import BeautifulSoup
 import requests
 
+from dotenv import load_dotenv
+import os
+
+spotify_client_id = os.getenv("SPOTIFY_CLIENT_ID")
+
+
+
 headers = {
     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.3"
 }
